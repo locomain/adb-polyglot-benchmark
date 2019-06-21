@@ -11,11 +11,12 @@ module.exports = class Utils {
      * Prints the time elapsed by func
      *
      * @param func
+     * @param async
      * @returns {number}
      */
-    static async benchmark(func){
+    static async benchmark(func,async = false){
         const timeBefore = performance.now();
-        func();
+        if(async) await func(); else func();
         const timeAfter = performance.now();
         const cost = timeAfter-timeBefore;
 

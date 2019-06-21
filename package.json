@@ -1,0 +1,22 @@
+{
+  "name": "adb-polyglot-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insert-location.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locomain/adb-polyglot-benchmark.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/locomain/adb-polyglot-benchmark/issues"
+  },
+  "homepage": "https://github.com/locomain/adb-polyglot-benchmark#readme",
+  "dependencies": {
+    "mongodb": "^3.2.7"
+  }
+}

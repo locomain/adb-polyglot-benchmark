@@ -1,9 +1,5 @@
-const Utils = require('./utils');
-const mongo = require('mongodb');
+const Utils = require('./helpers/utils');
 const data = [];
-
-
-console.log(Utils);
 
 //generate data
 for(let x = 0; x<1000000; x++){
@@ -15,15 +11,16 @@ for(let x = 0; x<1000000; x++){
     });
 }
 
-//insert data
-mongo.MongoClient.connect("mongodb://localhost:27017",(error,mongo)=>{
-    if(error)throw error;
-    const db = mongo.db('school');
+//run test
+Utils.mongo(async db=>{
     const locationCollection = db.collection('location');
+
+    //drop collection
     locationCollection.drop();
 
+    //start insert
     console.log("inserting locations");
-    Utils.benchmark(()=>
+    await Utils.benchmark(()=>
         locationCollection.insertMany(data)
     );
 });

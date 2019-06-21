@@ -27,6 +27,7 @@ const runTest = async ()=>{
         for(const user of collection){
             // get latest location of user
             const result = await locationCollection.find({ EMAIL: user.EMAIL }).sort({DATE:+1}).limit(1).toArray();
+            console.log(result);
             resultSet.push(result);
         }
     });

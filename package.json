@@ -7,6 +7,7 @@
   "scripts": {
     "probleem:1": "node insert-location",
     "probleem:2": "node get-location",
+    "probleem:5" : "node get-posts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

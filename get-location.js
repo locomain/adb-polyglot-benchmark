@@ -5,7 +5,7 @@ const Utils = require('./helpers/utils');
 //generate test data
 const generateTestData = async ()=>{
     const collection = await Utils.mysql(`SELECT * FROM location`);
-    await Utils.mongo((db,instance)=>{
+    await Utils.mongo(db=>{
         const locationCollection = db.collection('location');
 
         //drop collection
@@ -21,14 +21,17 @@ const generateTestData = async ()=>{
 //run test
 const runTest = async ()=>{
     const resultSet = [];
-    const collection = await Utils.mysql(`SELECT * FROM user`);
+    const collection = await Utils.mysql(`SELECT * FROM user LIMIT 1000`);
     await Utils.mongo(async db=>{
         const locationCollection = db.collection('location');
         for(const user of collection){
             // get latest location of user
             const result = await locationCollection.find({ EMAIL: user.EMAIL }).sort({DATE:+1}).limit(1).toArray();
-            console.log(result);
-            resultSet.push(result);
+            if(result.length>0){
+                //console.log(result);
+                resultSet.push(result[0]);
+            }
+
         }
     });
     console.log(resultSet);

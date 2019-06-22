@@ -31,9 +31,9 @@ module.exports = class Utils {
      */
     static async mysql(query,func){
         return new Promise((resolve,reject)=>{
-            mysqlConnection.query(query,(error,results,fields)=>{
+            mysqlConnection.query(query,(error,results)=>{
                 if(error)reject(error);
-                resolve(results); //(results,fields);
+                resolve(results);
             });
         });
     }

@@ -7,6 +7,7 @@
   "scripts": {
     "probleem:1:mongo": "node insert-location",
     "probleem:2:mongo": "node get-location",
+    "probleem:4:mysql": "node insert-post-mysql",
     "probleem:5:mongo" : "node get-posts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

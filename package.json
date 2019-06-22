@@ -5,9 +5,9 @@
   "main": "insert-location.js",
   "type": "module",
   "scripts": {
-    "probleem:1": "node insert-location",
-    "probleem:2": "node get-location",
-    "probleem:5" : "node get-posts",
+    "probleem:1:mongo": "node insert-location",
+    "probleem:2:mongo": "node get-location",
+    "probleem:5:mongo" : "node get-posts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

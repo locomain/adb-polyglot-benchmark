@@ -26,12 +26,10 @@ const runTest = async ()=>{
             // get latest location of user
             const result = await locationCollection.find({ EMAIL: user.EMAIL }).sort({DATE:+1}).limit(1).toArray();
             if(result.length>0){
-                //console.log(result);
                 resultSet.push(result[0]);
             }
         }
     });
-    console.log(resultSet);
 };
 
 generateTestData()

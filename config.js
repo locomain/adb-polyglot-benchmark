@@ -3,8 +3,8 @@ module.exports = {
         CONNECTION_STRING: {
             host: "localhost",
             user: "root",
-            password: "1234",
-            database:"LocoPostDB" //"onderzoek_polyglot"
+            password: "",
+            database:"onderzoek_polyglot"
         }
     },
     MONGODB: {

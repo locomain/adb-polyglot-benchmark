@@ -35,7 +35,6 @@ const runTest = async ()=>{
 
         }
     });
-    console.log(resultSet);
 };
 
 generateTestData()

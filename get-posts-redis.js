@@ -11,19 +11,18 @@ redis.on("error", function (err) {
 
 //generate test data
 const generateTestData = async ()=>{
-    console.log("generating Redis test data");
-    const collection = await Utils.mysql(`SELECT * FROM location ORDER BY EMAIL LIMIT 1`);
+    const collection = await Utils.mysql(`SELECT * FROM post`);
     for(let item of collection){
-        await LPUSH(`location-${item.EMAIL}`,JSON.stringify(item));
+        await LPUSH(`posts-${item.EMAIL}`,JSON.stringify(item));
     }
 };
 
 //run test
 const runTest = async ()=>{
     const resultSet = [];
-    const collection = await Utils.mysql(`SELECT * FROM user LIMIT 1000`);
+    const collection = await Utils.mysql(`SELECT * FROM user`);
     for(let item of collection){
-        resultSet.push(await LRANGE(`location-${item.EMAIL}`,0,0));
+        resultSet.push(LRANGE(`posts-${item.EMAIL}`,0,-1));
     }
 };
 
@@ -32,4 +31,3 @@ generateTestData()
         console.log("start selection test");
         Utils.benchmark(runTest,true);
     });
-

@@ -5,12 +5,13 @@
   "main": "insert-location.js",
   "type": "module",
   "scripts": {
-    "probleem:1:mongo": "node insert-location",
+    "probleem:1:mongo": "node insert-location-mongo",
     "probleem:1:mysql": "node insert-location-mysql",
     "probleem:2:mongo": "node get-location",
     "probleem:2:redis": "node get-location-redis",
     "probleem:4:mysql": "node insert-post-mysql",
-    "probleem:5:mongo": "node get-posts",
+    "probleem:5:mongo": "node get-posts-mongo",
+    "probleem:5:redis": "node get-posts-redis",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

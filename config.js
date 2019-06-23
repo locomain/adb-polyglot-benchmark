@@ -4,7 +4,7 @@ module.exports = {
             host: "localhost",
             user: "root",
             password: "",
-            database:"onderzoek_polyglot"
+            database:"onderzoek_polyglot_new"
         }
     },
     MONGODB: {

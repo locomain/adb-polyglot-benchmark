@@ -24,3 +24,4 @@ Utils.mongo(async db=>{
         locationCollection.insertMany(data)
     );
 });
+

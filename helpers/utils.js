@@ -27,9 +27,8 @@ module.exports = class Utils {
     /**
      *
      * @param query
-     * @param func
      */
-    static async mysql(query,func){
+    static async mysql(query){
         return new Promise((resolve,reject)=>{
             mysqlConnection.query(query,(error,results)=>{
                 if(error)reject(error);

@@ -1,7 +1,5 @@
 const Utils = require('./helpers/utils');
 
-
-
 //generate test data
 const generateTestData = async ()=>{
     const collection = await Utils.mysql(`SELECT * FROM location`);
@@ -31,7 +29,6 @@ const runTest = async ()=>{
                 //console.log(result);
                 resultSet.push(result[0]);
             }
-
         }
     });
     console.log(resultSet);
@@ -42,3 +39,4 @@ generateTestData()
         console.log("start selection test");
         Utils.benchmark(runTest,true);
     });
+

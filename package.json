@@ -7,11 +7,14 @@
   "scripts": {
     "probleem:1:mongo": "node insert-location-mongo",
     "probleem:1:mysql": "node insert-location-mysql",
+    "probleem:1:redis": "node src/ProbleemStelling1_Redis.js",
     "probleem:2:mongo": "node get-location",
     "probleem:2:redis": "node get-location-redis",
     "probleem:4:mysql": "node insert-post-mysql",
+    "probleem:4:neo4j": "node src/ProbleemStelling4.js",
     "probleem:5:mongo": "node get-posts-mongo",
     "probleem:5:redis": "node get-posts-redis",
+    "probleem:6:neo4j": "node src/ProbleemStelling6.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +30,7 @@
   "dependencies": {
     "mongodb": "^3.2.7",
     "mysql": "^2.17.1",
+    "neo4j-driver": "^1.7.5",
     "redis": "^2.8.0"
   }
 }

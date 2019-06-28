@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "insert-location.js",
-  "type": "module",
   "scripts": {
-    "probleem:1:mongo": "node insert-location-mongo",
+    "probleem:1:mongo": "node insert-location",
     "probleem:1:mysql": "node insert-location-mysql",
     "probleem:1:redis": "node ProbleemStelling1_Redis.js",
-    "probleem:2:mongo": "node get-location",
+    "probleem:2:mongo": "node get-location-mongo",
     "probleem:2:redis": "node get-location-redis",
     "probleem:4:mysql": "node insert-post-mysql",
     "probleem:4:neo4j": "node ProbleemStelling4.js",
@@ -21,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/locomain/adb-polyglot-benchmark.git"
   },
-  "author": "",
+  "author": "Angelo Perrello, Vince Kieft, Jan Willem Beckmans",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/locomain/adb-polyglot-benchmark/issues"

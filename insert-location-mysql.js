@@ -1,6 +1,5 @@
 const Utils = require('./helpers/utils');
 
-
 //run test
 async function runQueries(){
     let baseQuery = 'INSERT INTO location (location_id, email, latitude, longitude, date) VALUES ';
@@ -10,8 +9,8 @@ async function runQueries(){
     const batchCount = totalInserts / bulkLength;
 
     const nextID = (await Utils.mysql('SELECT MAX(location_id) from location'))[0]['MAX(location_id)'] + 1;
-    console.log(nextID);
-//generate data
+
+    //generate data
     for(let y = 0; y<batchCount; y++) {
         batchQueries[y] = baseQuery;
         for(let x = 0; x<bulkLength; x++){
@@ -21,27 +20,12 @@ async function runQueries(){
         }
 
     }
-    console.log(batchQueries.length);
-    console.log("inserting locations");
-    countDingetje();
     await Utils.benchmark (async()=> {
             for (let q = 0; q < batchQueries.length; q++) {
-                await runQuery(batchQueries[q]);
+                await Utils.mysql(batchQueries[q]);
             }
-        }
-    ,true);
-    countDingetje();
+        },true);
 }
-
-async function runQuery(query){
-        await Utils.mysql(query);
-}
-
-async function countDingetje(){
-    const count = await Utils.mysql('SELECT COUNT(*) FROM location');
-    console.log(count);
-}
-
 runQueries();
 
 
